@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,13 +13,19 @@ namespace WebApplication.Models
         [Key]
         public int EmployeeID { get; set; }
         [Column(TypeName ="nvarchar(100)")]
+        [Required]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
         [Column(TypeName = "nvarchar(100)")]
+        [Required]
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
         [Column(TypeName = "varchar(100)")]
+        [DisplayName("Employee Code")]
         public string EmployeeCode { get; set; }
-        [Column(TypeName = "varchar(100)")]
-        public string Position { get; set; }
+        [Column]
+        [Required]
+        public Positions? Position { get; set; }
 
     }
 }

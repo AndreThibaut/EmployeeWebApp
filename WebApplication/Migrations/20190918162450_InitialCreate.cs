@@ -13,10 +13,10 @@ namespace WebApplication.Migrations
                 {
                     EmployeeID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(type: "nvarchar(100)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     EmployeeCode = table.Column<string>(type: "varchar(100)", nullable: true),
-                    Position = table.Column<string>(type: "varchar(100)", nullable: true)
+                    Position = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

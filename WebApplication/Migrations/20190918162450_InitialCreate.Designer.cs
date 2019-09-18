@@ -9,7 +9,7 @@ using WebApplication.Models;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20190918142841_InitialCreate")]
+    [Migration("20190918162450_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,13 +30,14 @@ namespace WebApplication.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Position")
-                        .HasColumnType("varchar(100)");
+                    b.Property<int>("Position");
 
                     b.HasKey("EmployeeID");
 

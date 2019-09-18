@@ -28,13 +28,14 @@ namespace WebApplication.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Position")
-                        .HasColumnType("varchar(100)");
+                    b.Property<int>("Position");
 
                     b.HasKey("EmployeeID");
 
